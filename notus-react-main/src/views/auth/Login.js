@@ -1,7 +1,58 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
+//import { emailPattern } from "../utils";
 export default function Login() {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [errors, setErrors] = useState({});
+  const [errorMessage, setErrorMessage] = useState("");
+
+  const handleEmailChange = (e) => {
+    setEmail(e.target.value);
+    setErrorMessage(""); // Reset error message when email changes
+  };
+
+  const handlePasswordChange = (e) => {
+    setPassword(e.target.value);
+    setErrorMessage(""); // Reset error message when password changes
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const validationErrors = FormValidation();
+    if (Object.keys(validationErrors).length > 0) {
+      setErrors(validationErrors);
+      return;
+    }
+
+    
+    if ( email && password && Object.keys(validationErrors).length == 0) {
+      // Clear any previous errors
+      setErrors({});
+      // Navigate to home page or perform login logic
+      window.location.href = "/admin/dashboard"; // Replace '/home' with your home page route
+    } else {
+      setErrorMessage("Invalid email or password. Please try again.");
+    }
+  };
+   
+  const emailPattern = (email) => {
+    const trimmedEmail = email.trim(); // Remove leading and trailing spaces
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@0-9]{2,}$/;
+    return trimmedEmail.match(emailPattern);
+  };
+  
+  const FormValidation = () => {
+    const errors = {};
+    if (!emailPattern(email)) {
+      errors.email = "Invalid email address";
+    }
+    return errors;
+  };
+
   return (
     <>
       <div className="container mx-auto px-4 h-full">
@@ -52,11 +103,22 @@ export default function Login() {
                     >
                       Email
                     </label>
+                    {/* <input
+                      type="email"
+                      
+                      placeholder="Email"
+                    /> */}
                     <input
                       type="email"
+                      name="email"
+                      id="email"
+                      placeholder="Enter email"
+                      maxLength={70}
                       className="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
-                      placeholder="Email"
+                      value={email}
+                      onChange={handleEmailChange}
                     />
+                    {errors.email && <p className="text-red-500">{errors.email}</p>}
                   </div>
 
                   <div className="relative w-full mb-3">
@@ -66,11 +128,23 @@ export default function Login() {
                     >
                       Password
                     </label>
+                    {/* <input
+                      type="password"
+                      
+                      placeholder="Password"
+                    /> */}
                     <input
                       type="password"
+                      name="password"
+                      id="password"
+                      placeholder="Enter password"
+                      maxLength={12}
                       className="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
-                      placeholder="Password"
+                      value={password}
+                      onChange={handlePasswordChange}
+                      required
                     />
+                    {errorMessage && <p className="text-red-500">{errorMessage}</p>}
                   </div>
                   <div>
                     <label className="inline-flex items-center cursor-pointer">
@@ -89,6 +163,7 @@ export default function Login() {
                     <button
                       className="bg-blueGray-800 text-white active:bg-blueGray-600 text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 w-full ease-linear transition-all duration-150"
                       type="button"
+                      onClick={handleSubmit}
                     >
                       Sign In
                     </button>

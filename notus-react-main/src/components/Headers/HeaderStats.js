@@ -11,30 +11,14 @@ export default function HeaderStats() {
       <div className="relative bg-lightBlue-600 md:pt-32 pb-32 pt-12">
         <div className="px-4 md:px-10 mx-auto w-full">
           <div>
-            <div className="max-w-xs rounded overflow-hidden shadow-lg bg-gray-100 hover:bg-gray-200 transition duration-300 ease-in-out cursor-pointer" onClick={() => { }}>
-              <div className="px-6 py-4">
-                <div className="font-bold text-xl mb-2">Abc</div>
-                <div className="flex items-center justify-between">
-                  <p className="text-gray-700 text-base">Video 1</p>
-                </div>
-              </div>
-              <div className="px-6 py-4">
-                <div className="flex items-center justify-between">
-                  <p className="text-gray-700 text-base">Video 2</p>
-                </div>
-              </div>
-              <div className="px-6 py-4">
-                <div className="flex items-center justify-between">
-                  <p className="text-gray-700 text-base">Video 3</p>
-                </div>
-              </div>
-            </div>
+            
+            
             {/* Card stats */}
-            {/* <div className="flex flex-wrap">
-              <div className="w-full lg:w-6/12 xl:w-3/12 px-4">
+            <div className="flex flex-wrap">
+              <div className="w-full lg:w-3/12 xl:w-3/12 px-4">
                 <CardStats
                   statSubtitle="TRAFFIC"
-                  statTitle="350,897"
+                  statTitle="Game 1"
                   statArrow="up"
                   statPercent="3.48"
                   statPercentColor="text-emerald-500"
@@ -43,10 +27,10 @@ export default function HeaderStats() {
                   statIconColor="bg-red-500"
                 />
               </div>
-              <div className="w-full lg:w-6/12 xl:w-3/12 px-4">
+              <div className="w-full lg:w-3/12 xl:w-3/12 px-4">
                 <CardStats
                   statSubtitle="NEW USERS"
-                  statTitle="2,356"
+                  statTitle="Game 2"
                   statArrow="down"
                   statPercent="3.48"
                   statPercentColor="text-red-500"
@@ -55,19 +39,20 @@ export default function HeaderStats() {
                   statIconColor="bg-orange-500"
                 />
               </div>
-              <div className="w-full lg:w-6/12 xl:w-3/12 px-4">
+              <div className="w-full lg:w-3/12 xl:w-3/12 px-4">
                 <CardStats
                   statSubtitle="SALES"
-                  statTitle="924"
+                  statTitle="Game 3"
                   statArrow="down"
                   statPercent="1.10"
                   statPercentColor="text-orange-500"
                   statDescripiron="Since yesterday"
                   statIconName="fas fa-users"
                   statIconColor="bg-pink-500"
+                  
                 />
               </div>
-              <div className="w-full lg:w-6/12 xl:w-3/12 px-4">
+              {/* <div className="w-full lg:w-6/12 xl:w-3/12 px-4">
                 <CardStats
                   statSubtitle="PERFORMANCE"
                   statTitle="49,65%"
@@ -78,8 +63,8 @@ export default function HeaderStats() {
                   statIconName="fas fa-percent"
                   statIconColor="bg-lightBlue-500"
                 />
-              </div>
-            </div> */}
+              </div> */}
+            </div>
           </div>
         </div>
       </div>
