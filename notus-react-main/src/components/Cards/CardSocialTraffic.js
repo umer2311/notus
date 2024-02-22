@@ -10,7 +10,7 @@ export default function CardSocialTraffic() {
           <div className="flex flex-wrap items-center">
             <div className="relative w-full px-4 max-w-full flex-grow flex-1">
               <h3 className="font-semibold text-base text-blueGray-700">
-                Social traffic
+                Game Visits
               </h3>
             </div>
             <div className="relative w-full px-4 max-w-full flex-grow flex-1 text-right">
@@ -29,7 +29,7 @@ export default function CardSocialTraffic() {
             <thead className="thead-light">
               <tr>
                 <th className="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
-                  Referral
+                  Games
                 </th>
                 <th className="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
                   Visitors
@@ -38,7 +38,7 @@ export default function CardSocialTraffic() {
               </tr>
             </thead>
             <tbody>
-              <tr>
+              {/* <tr>
                 <th className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">
                   Facebook
                 </th>
@@ -58,8 +58,8 @@ export default function CardSocialTraffic() {
                     </div>
                   </div>
                 </td>
-              </tr>
-              <tr>
+              </tr> */}
+              {/* <tr>
                 <th className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">
                   Facebook
                 </th>
@@ -79,10 +79,10 @@ export default function CardSocialTraffic() {
                     </div>
                   </div>
                 </td>
-              </tr>
+              </tr> */}
               <tr>
                 <th className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">
-                  Google
+                  Game 1
                 </th>
                 <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
                   4,807
@@ -103,7 +103,7 @@ export default function CardSocialTraffic() {
               </tr>
               <tr>
                 <th className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">
-                  Instagram
+                Game 2
                 </th>
                 <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
                   3,678
@@ -124,7 +124,7 @@ export default function CardSocialTraffic() {
               </tr>
               <tr>
                 <th className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">
-                  twitter
+                  Game 3
                 </th>
                 <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
                   2,645

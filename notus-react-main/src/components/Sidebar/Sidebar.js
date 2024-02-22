@@ -24,7 +24,7 @@ export default function Sidebar() {
             className="md:block text-left md:pb-2 text-blueGray-600 mr-0 inline-block whitespace-nowrap text-sm uppercase font-bold p-4 px-0"
             to="/"
           >
-            Notus React
+            Project
           </Link>
           
           <ul className="md:hidden items-center flex flex-wrap list-none">
@@ -50,7 +50,7 @@ export default function Sidebar() {
                     className="md:block text-left md:pb-2 text-blueGray-600 mr-0 inline-block whitespace-nowrap text-sm uppercase font-bold p-4 px-0"
                     to="/"
                   >
-                    Notus React
+                    Project
                   </Link>
                 </div>
                 <div className="w-6/12 flex justify-end">
@@ -79,7 +79,7 @@ export default function Sidebar() {
             <hr className="my-4 md:min-w-full" />
             
             <h6 className="md:min-w-full text-blueGray-500 text-xs uppercase font-bold block pt-1 pb-4 no-underline">
-              Admin Layout Pages
+              Admin 
             </h6>
             
 
@@ -106,7 +106,7 @@ export default function Sidebar() {
                 </Link>
               </li>
 
-              <li className="items-center">
+              {/* <li className="items-center">
                 <Link
                   className={
                     "text-xs uppercase py-3 font-bold block " +
@@ -170,7 +170,7 @@ export default function Sidebar() {
                   ></i>{" "}
                   Maps
                 </Link>
-              </li>
+              </li> */}
             </ul>
 
            

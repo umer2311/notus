@@ -11,31 +11,50 @@ export default function Login() {
 
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
+    
     setErrorMessage(""); // Reset error message when email changes
+  };
+  const FormValidation = () => {
+    const errors = {};
+    if (!emailPattern(email) ) {
+      errors.email = "Invalid Email Address";
+    }
+    
+    return errors;
   };
 
   const handlePasswordChange = (e) => {
     setPassword(e.target.value);
+    if(e.target.value.length>=8)
+    {
     setErrorMessage(""); // Reset error message when password changes
+    }
+    else if(e.target.value<8 && e.target.value>0)
+    {
+      setErrorMessage("Password Should Be 8 Digit Long");
+    }
+    else if(e.target.value <= 0 || !password)
+    {
+      setErrorMessage("Password Can Not Be Empty");
+    }
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
+    
     const validationErrors = FormValidation();
     if (Object.keys(validationErrors).length > 0) {
       setErrors(validationErrors);
       return;
     }
-
-    
-    if ( email && password && Object.keys(validationErrors).length == 0) {
+    console.log(email,password)
+   if ( (email =="Admin@gmail.com" || email == "admin@gmail.com") && password=="12345678" && Object.keys(validationErrors).length == 0) {
       // Clear any previous errors
       setErrors({});
       // Navigate to home page or perform login logic
       window.location.href = "/admin/dashboard"; // Replace '/home' with your home page route
     } else {
-      setErrorMessage("Invalid email or password. Please try again.");
+      setErrorMessage("Invalid Email Or Password. Please Try Again.");
     }
   };
    
@@ -45,21 +64,18 @@ export default function Login() {
     return trimmedEmail.match(emailPattern);
   };
   
-  const FormValidation = () => {
-    const errors = {};
-    if (!emailPattern(email)) {
-      errors.email = "Invalid email address";
-    }
-    return errors;
-  };
+  
 
   return (
     <>
       <div className="container mx-auto px-4 h-full">
         <div className="flex content-center items-center justify-center h-full">
           <div className="w-full lg:w-4/12 px-4">
-            <div className="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-blueGray-200 border-0">
-              <div className="rounded-t mb-0 px-6 py-6">
+            <div className="relative flex flex-col mt-10 min-w-0 pt-2 break-words w-full mb-6 shadow-lg rounded-lg bg-blueGray-200 border-0">
+              <div classname= "w-full ">
+                <h3 className="text-center text-2xl font-bold">Sign In</h3>
+              </div>
+              {/* <div className="rounded-t mb-0 px-6 py-6">
                 <div className="text-center mb-3">
                   <h6 className="text-blueGray-500 text-sm font-bold">
                     Sign in with
@@ -90,11 +106,11 @@ export default function Login() {
                   </button>
                 </div>
                 <hr className="mt-6 border-b-1 border-blueGray-300" />
-              </div>
-              <div className="flex-auto px-4 lg:px-10 py-10 pt-0">
-                <div className="text-blueGray-400 text-center mb-3 font-bold">
+              </div> */}
+              <div className="flex-auto px-6 lg:px-10 py-10 pt-0">
+                {/* <div className="text-blueGray-400 text-center mb-3 font-bold">
                   <small>Or sign in with credentials</small>
-                </div>
+                </div> */}
                 <form>
                   <div className="relative w-full mb-3">
                     <label
@@ -147,7 +163,7 @@ export default function Login() {
                     {errorMessage && <p className="text-red-500">{errorMessage}</p>}
                   </div>
                   <div>
-                    <label className="inline-flex items-center cursor-pointer">
+                    {/* <label className="inline-flex items-center cursor-pointer">
                       <input
                         id="customCheckLogin"
                         type="checkbox"
@@ -156,7 +172,7 @@ export default function Login() {
                       <span className="ml-2 text-sm font-semibold text-blueGray-600">
                         Remember me
                       </span>
-                    </label>
+                    </label> */}
                   </div>
 
                   <div className="text-center mt-6">
@@ -167,12 +183,13 @@ export default function Login() {
                     >
                       Sign In
                     </button>
+                    
                   </div>
                 </form>
               </div>
             </div>
             <div className="flex flex-wrap mt-6 relative">
-              <div className="w-1/2">
+              {/* <div className="w-1/2">
                 <a
                   href="#pablo"
                   onClick={(e) => e.preventDefault()}
@@ -185,7 +202,7 @@ export default function Login() {
                 <Link to="/auth/register" className="text-blueGray-200">
                   <small>Create new account</small>
                 </Link>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>

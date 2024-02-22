@@ -15,7 +15,7 @@ export default function HeaderStats() {
             
             {/* Card stats */}
             <div className="flex flex-wrap">
-              <div className="w-full lg:w-3/12 xl:w-3/12 px-4">
+              <div className="w-full md:w-3/12 lg:w-3/12 xl:w-3/12 px-4">
                 <CardStats
                   statSubtitle="TRAFFIC"
                   statTitle="Game 1"
@@ -27,7 +27,7 @@ export default function HeaderStats() {
                   statIconColor="bg-red-500"
                 />
               </div>
-              <div className="w-full lg:w-3/12 xl:w-3/12 px-4">
+              <div className="w-full md:w-3/12 lg:w-3/12 xl:w-3/12 px-4">
                 <CardStats
                   statSubtitle="NEW USERS"
                   statTitle="Game 2"
@@ -39,7 +39,7 @@ export default function HeaderStats() {
                   statIconColor="bg-orange-500"
                 />
               </div>
-              <div className="w-full lg:w-3/12 xl:w-3/12 px-4">
+              <div className="w-full md:w-3/12 lg:w-3/12 xl:w-3/12 px-4">
                 <CardStats
                   statSubtitle="SALES"
                   statTitle="Game 3"
